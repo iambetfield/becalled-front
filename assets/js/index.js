@@ -5,6 +5,7 @@ function auth(){
         const user = document.getElementById('username');
        
         user.innerText= connectedUser.username;
+        user.style.color="white";
         
 
         const reg = document.getElementById('register');
