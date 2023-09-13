@@ -2,11 +2,19 @@
 function auth(){
     const connectedUser = JSON.parse(localStorage.getItem('connectedUser'));
     if(connectedUser){
-        const user = document.getElementById('login');
+        const user = document.getElementById('username');
+       
         user.innerText= connectedUser.username;
+        
 
         const reg = document.getElementById('register');
-        reg.innerText=""
+        const log = document.getElementById('login');
+        reg.style.display= "none";
+        log.style.display="none";
+       
+    } else {
+        const logout = document.getElementById('logout');
+        logout.style.display="none";
     }
     
 }
@@ -65,12 +73,16 @@ function handleLogout() {
         body: localStorage.getItem('connectedUser')
     })
         .then((response) => {
+            
+            console.log("usuario eliminado")
             return response;
         })
-        .then((data) => {
-            localStorage.removeItem('connectedUser');
-            window.location.href = "index.html";
+        .then(() => {
+            
+            
         });
+        localStorage.removeItem('connectedUser');
+        window.location.href = "index.html";
 }
 
 const logoutBtn = document.getElementById("logoutBtn");
