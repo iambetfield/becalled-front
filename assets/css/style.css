@@ -874,7 +874,7 @@ section {
 .hero-section,
 .hero-section>.container>.row {
   height: 100vh;
-  min-height: 800px;
+  min-height: 600px;
 }
 
 .hero-section.inner-page {
